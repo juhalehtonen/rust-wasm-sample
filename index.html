@@ -11,8 +11,8 @@
       ).then(buffer =>
           WebAssembly.instantiate(buffer)
       ).then(({module, instance}) => {
-          console.log(instance.exports.add_twenty_seven(4));
-          console.log(instance.exports.add_twenty_seven(1234));
+          console.log(instance.exports.add_two_numbers(4, 100));
+          console.log(instance.exports.add_two_numbers(10, 10));
       });
   }
 
