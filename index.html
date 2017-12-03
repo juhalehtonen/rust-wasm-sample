@@ -11,8 +11,7 @@
       ).then(buffer =>
           WebAssembly.instantiate(buffer)
       ).then(({module, instance}) => {
-          console.log(instance.exports.add_two_numbers(4, 100));
-          console.log(instance.exports.add_two_numbers(10, 10));
+          console.log('321 + 100 equals to: ' + instance.exports.add_two_numbers(321, 100));
       });
   }
 
