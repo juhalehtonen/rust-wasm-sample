@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wasm/Rust</title>
+  <script>
+
+  function loadWasm() {
+      fetch('main.wasm').then(response =>
+          response.arrayBuffer()
+      ).then(buffer =>
+          WebAssembly.instantiate(buffer)
+      ).then(({module, instance}) => {
+          console.log(instance.exports.add_twenty_seven(4));
+          console.log(instance.exports.add_twenty_seven(1234));
+      });
+  }
+
+  loadWasm()
+  </script>
+</head>
+<body></body>
+</html>
